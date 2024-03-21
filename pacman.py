@@ -12,17 +12,14 @@ Exercises
 # Se importan las librerías necesarias
 from random import choice
 from turtle import *
-
 from freegames import floor, vector
 
-# Puntuación inicial del jugador
-state = {'score': 0}
-# Turtle para el camino y el escritor de la puntación
-path = Turtle(visible=False)
+state = {'score': 0}    # Puntuación inicial del jugador
+path = Turtle(visible=False)    # Turtle para el camino y el escritor de la puntación
 writer = Turtle(visible=False)
-# Vector de movimiento inicial de pacman y su posición inicial
-aim = vector(5, 0)
+aim = vector(5, 0) # Vector de movimiento inicial de pacman y su posición inicial
 pacman = vector(-40, -80)
+
 # Inicialización de las posiciones y direcciones de movimiento iniciales de los fantasmas
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
@@ -30,6 +27,7 @@ ghosts = [
     [vector(100, 160), vector(0, -5)],
     [vector(100, -160), vector(-5, 0)],
 ]
+
 # fmt: off
 # Definimos el tablero de juego con una lista de ceros (espacios vacíos) y unos (baldosas por las que se puede mover)
 tiles = [
@@ -139,7 +137,7 @@ def move():
 
     for point, course in ghosts:
         if valid(point + course):
-            point.move(course)
+            point.move(course * 2) # Fantasmas se mueven más rápido
         else:
             options = [
                 vector(5, 0),
