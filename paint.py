@@ -8,7 +8,7 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
-
+import math
 from turtle import * #Importa todas las funciones de la librería turtle
 
 from freegames import vector #Importa la clase vector de la librería freegames
@@ -38,7 +38,14 @@ def square(start, end):
 
 def circle(start, end):
     """Draw circle from start to end."""
-    pass  # TODO
+    r = math.sqrt((end.x - start.x) ** 2 + (end.y - start.y) ** 2)
+    
+    pen = Turtle()
+    pen.hideturtle()  
+    pen.up()
+    pen.goto(start.x, start.y - r)  # Ajusta la posición para el centro del círculo
+    pen.down()
+    pen.circle(r)
 
 
 def rectangle(start, end):
@@ -82,6 +89,9 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+#Color nuevo 
+onkey(lambda: color('purple'),'P')
+
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
