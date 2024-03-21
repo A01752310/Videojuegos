@@ -72,12 +72,14 @@ def move():
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)  # Elimina los objetivos que están demasiado cerca de la pelota
-
-    draw()
-
+            
     for target in targets:
         if not inside(target):
-            return
+            # Reposiciona el objetivo al lado derecho de la pantalla con una nueva posición y aleatoria
+            target.x = 200
+            target.y = randrange(-150, 150)
+
+    draw()
 
     #ontimer(move, 50)
     ontimer(move, 25)  # Aumentar la velocidad en 2 veces
