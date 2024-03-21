@@ -15,7 +15,8 @@ from freegames import path
 
 # Carga la imagen del coche
 car = path('car.gif')
-tiles = list(range(32)) * 2     # Crea una lista de números para representar las fichas
+tiles = list(range(32)) * 2# Crea una lista de números para representar las fichas
+tiles_a_letras = [chr(tile+65)for tile in tiles] #Convierte la lista de numeros a carateres 
 state = {'mark': None}          # Estado del juego (marca de la ficha seleccionada)
 hide = [True] * 64              # Lista para ocultar las fichas
 tap_count = 0                   # Contador de taps
@@ -52,7 +53,7 @@ def tap(x, y):
     spot = index(x, y)
     mark = state['mark']
 
-    if mark is None or mark == spot or tiles[mark] != tiles[spot]:
+    if mark is None or mark == spot or tiles_a_letras[mark] != tiles_a_letras[spot]:
         state['mark'] = spot
     else:
         hide[spot] = False
@@ -91,14 +92,14 @@ def draw():
         #goto(x + 2, y)
         goto(x + 5, y + 2)  # Adjustar la posicion para centrar el digito
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles_a_letras[mark], font=('Arial', 30, 'normal'))
 
     update_tap_count()
     update()
     ontimer(draw, 100)
 
 # Baraja las fichas
-shuffle(tiles)
+shuffle(tiles_a_letras)
 
 # Configuración inicial de la ventana y controles
 setup(420, 420, 370, 0)
