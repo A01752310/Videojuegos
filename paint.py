@@ -42,17 +42,15 @@ def circle(start, end):
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
-    # Levanta el lápiz para que no dibuje mientras se mueve a la posición inicial
-    up()
+    up() # Levanta el lápiz para que no dibuje mientras se mueve a la posición inicial
     goto(start.x, start.y)
     down()  # Baja el lápiz para comenzar a dibujar
 
     begin_fill()  # Inicia el llenado del rectángulo
 
     # Dibuja los lados del rectángulo
-    for _ in range(2):
-        # Avanza la distancia horizontal entre los puntos start y end
-        forward(end.x - start.x)
+    for _ in range(2):    
+        forward(end.x - start.x) # Avanza la distancia horizontal entre los puntos start y end
         left(90)  # Gira a la izquierda 90 grados para dibujar el lado vertical
         # Avanza la distancia vertical entre los puntos start y end
         forward(end.y - start.y)
@@ -62,7 +60,17 @@ def rectangle(start, end):
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    up()        # Levanta el lápiz para moverse al punto inicial sin dibujar
+    goto(start.x, start.y)  # Mueve el cursor de Turtle al punto inicial del triángulo
+    down()  # Baja el lápiz para comenzar a dibujar
+    begin_fill()        # Inicia el llenado del triángulo con el color seleccionado
+
+    # Dibuja los tres lados del triángulo
+    goto(end.x, end.y)  # Primer lado: del punto inicial al punto final
+    goto((start.x + end.x) / 2, start.y)     # Segundo lado: desde el punto final hasta el punto medio en el eje x
+    goto(start.x, start.y)  # Tercer lado: desde el punto medio en el eje x hasta el punto inicial
+
+    end_fill() # Finaliza el llenado del triángulo
 
 # Maneja los clics en la pantalla, guardando el punto de inicio o dibujando la forma que se seleccionó
 def tap(x, y):
