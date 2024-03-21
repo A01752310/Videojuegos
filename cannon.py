@@ -23,8 +23,11 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        #speed.x = (x + 200) / 25
+        #speed.y = (y + 200) / 25
+        speed.x = (x + 200) / 12  # Aumentar la velocidad en 2 veces
+        speed.y = (y + 200) / 12  # Aumentar la velocidad en 2 veces
+
 
 
 def inside(xy):
@@ -55,10 +58,12 @@ def move():
         targets.append(target)  # Agrega un nuevo objetivo aleatorio
 
     for target in targets:
-        target.x -= 0.5         # Mueve los objetivos hacia la izquierda
+        #target.x -= 0.5         # Mueve los objetivos hacia la izquierda
+        target.x -= 1  # Aumentar la velocidad en 2 veces
 
     if inside(ball):
-        speed.y -= 0.35
+        #speed.y -= 0.35
+        speed.y -= 0.7  # Aumentar la velocidad en 2 veces
         ball.move(speed)        # Mueve la pelota según la velocidad actual
 
     dupe = targets.copy()
@@ -74,7 +79,8 @@ def move():
         if not inside(target):
             return
 
-    ontimer(move, 50)
+    #ontimer(move, 50)
+    ontimer(move, 25)  # Aumentar la velocidad en 2 veces
 
 # Configuración inicial de la ventana y controles
 setup(420, 420, 370, 0)
