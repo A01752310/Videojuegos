@@ -10,7 +10,6 @@ Exercises
 """
 
 from turtle import * #Importa todas las funciones de la librería turtle
-
 from freegames import vector #Importa la clase vector de la librería freegames
 
 #Las siguientes funciones dibujan diferentes formas geometricas
@@ -43,8 +42,23 @@ def circle(start, end):
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
-    pass  # TODO
+    # Levanta el lápiz para que no dibuje mientras se mueve a la posición inicial
+    up()
+    goto(start.x, start.y)
+    down()  # Baja el lápiz para comenzar a dibujar
 
+    begin_fill()  # Inicia el llenado del rectángulo
+
+    # Dibuja los lados del rectángulo
+    for _ in range(2):
+        # Avanza la distancia horizontal entre los puntos start y end
+        forward(end.x - start.x)
+        left(90)  # Gira a la izquierda 90 grados para dibujar el lado vertical
+        # Avanza la distancia vertical entre los puntos start y end
+        forward(end.y - start.y)
+        left(90)  # Gira a la izquierda 90 grados para dibujar el lado horizontal
+
+    end_fill()  # Finaliza el llenado del rectángulo
 
 def triangle(start, end):
     """Draw triangle from start to end."""
