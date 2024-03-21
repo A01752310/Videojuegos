@@ -29,4 +29,3 @@ Realiza las mejoras necesarias siguiendo las peticiones recibidas.
 
 Realiza commits y push de tus cambios al repositorio remoto en GitHub.
 
-Comunica tus cambios al equipo para que puedan revisarlos y fusionarlos con la rama principal.
