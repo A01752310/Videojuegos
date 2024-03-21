@@ -37,11 +37,14 @@ def index(x, y):
     """Convert (x, y) coordinates to tiles index."""
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
-
 def xy(count):
     """Convert tiles count to (x, y) coordinates."""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
+def check_game_over():
+    """Check if all tiles are uncovered."""
+    if all(not hide[count] for count in range(64)):
+        print("¡Felicidades! Has destapado todos los cuadros.")
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
@@ -58,6 +61,7 @@ def tap(x, y):
         tap_count += 1  # Incrementa el contador de taps
 
     update_tap_count()
+    check_game_over()  # Verifica si todos los cuadros están destapados
 
 def update_tap_count():
     """Update tap count displayed on the screen."""
