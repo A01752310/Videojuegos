@@ -92,7 +92,7 @@ def valid(point):
 
     return point.x % 20 == 0 or point.y % 20 == 0
 
-# Dibuja el mundo de juego 
+# Dibuja el mundo de juego
 def world():
     """Draw world using path."""
     bgcolor('black')
@@ -148,7 +148,6 @@ def move():
             primary, secondary = options
         else:
             secondary, primary = options
-        
         # Intenta el movimiento primario; si no es válido, intenta el secundario
         if valid(point + primary):
             point.move(primary)
@@ -170,7 +169,7 @@ def move():
         if abs(pacman - point) < 20:
             return
 
-    ontimer(move, 10)
+    ontimer(move, 50)
 
 
 def change(x, y):
