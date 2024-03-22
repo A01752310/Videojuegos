@@ -73,12 +73,9 @@ def move():
 
     clear() # Limpia la pantalla
 
-<<<<<<< HEAD
+
     
     "Dibuja la serpiente y la comida"
-=======
-    # Dibuja la serpiente y la comida
->>>>>>> f851be9e8a808737331c2ae06a1c9c308265c9b1
     for body in snake:
         square(body.x, body.y, 9,y)
 
