@@ -17,8 +17,8 @@ Este repositorio contiene un proyecto colaborativo de mejora de videojuegos en e
 * Python: Los videojuegos están programados en Python utilizando la biblioteca Turtle.
 
 # Colaboradores
-- Abdiel Vicencio Antonio A01750922
-- Luis Angel Godinez Gonzales A01752310
+- [Abdiel Vicencio Antonio A01750922](https://github.com/Pezcadoo31)
+- [Luis Angel Godinez Gonzales A01752310](https://github.com/A01752310)
 
 # Instrucciones Para Ejecutar 
 Clona este repositorio en tu máquina local utilizando el comando git clone.
