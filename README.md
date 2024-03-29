@@ -21,11 +21,11 @@ Este repositorio contiene un proyecto colaborativo de mejora de videojuegos en e
 - [Luis Angel Godinez Gonzales A01752310](https://github.com/A01752310)
 
 # Instrucciones Para Ejecutar 
-Clona este repositorio en tu máquina local utilizando el comando git clone.
+1. Clona este repositorio en tu máquina local utilizando el comando git clone.
 
-Abre el juego que desees mejorar en tu entorno de desarrollo.
+2. Abre el juego que desees mejorar en tu entorno de desarrollo.
 
-Realiza las mejoras necesarias siguiendo las peticiones recibidas.
+3. Realiza las mejoras necesarias siguiendo las peticiones recibidas.
 
-Realiza commits y push de tus cambios al repositorio remoto en GitHub.
+4. Realiza commits y push de tus cambios al repositorio remoto en GitHub.
 
